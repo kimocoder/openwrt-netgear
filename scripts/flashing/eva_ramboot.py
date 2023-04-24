@@ -21,10 +21,10 @@ img = open(image, "rb")
 ftp = FTP(ip, 'adam2', 'adam2')
 
 def adam(cmd):
-	print("> %s"%(cmd))
+	print(f"> {cmd}")
 	resp = ftp.sendcmd(cmd)
-	print("< %s"%(resp))
-	assert resp[0:3] == "200"
+	print(f"< {resp}")
+	assert resp[:3] == "200"
 
 ftp.set_pasv(True)
 # The following parameters allow booting the avm recovery system with this
